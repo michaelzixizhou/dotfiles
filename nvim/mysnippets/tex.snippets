@@ -1,0 +1,143 @@
+snippet b "Bold" 
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+
+snippet i "Italic"
+\textit{${1:${VISUAL}}}$0
+endsnippet
+
+snippet mn "Margin Note"
+\marginnote{${1:${VISUAL}}}$0
+endsnippet
+
+snippet sn "Side Note"
+\sidenote{${1:${VISUAL}}}$0
+endsnippet
+
+snippet nsetup "Note taking setup"
+\documentclass{article}
+\usepackage[top=2.54cm, bottom=2.54cm, outer=8cm, inner=2.54cm, heightrounded, marginparwidth=4.46cm, marginparsep=1cm]{geometry}
+\usepackage{lipsum}
+\usepackage{parskip}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{marginfix} % floats sidenotes
+\usepackage{sidenotes}
+\usepackage{amsmath}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{enumitem}
+\title{}
+\author{Michael Zhou}
+\date{}
+
+\newcommand\qedsymbol{\hfill$\blacksquare$}                                     
+\newcounter{defcount}
+\newcounter{excount}
+\newcounter{thcount}
+\newcommand\df{\stepcounter{defcount} \textbf{Definition 2.\thedefcount}. }
+\newcommand\ex{\stepcounter{excount} \textbf{Example 2.\theexcount}. }
+\newcommand\tr{\stepcounter{thcount} \textbf{Theorem 2.\thethcount}. }
+
+\begin{document}
+\maketitle
+
+\end{document}
+endsnippet
+
+snippet psetup "Problem set setup"
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage{parskip}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{enumitem}
+\title{}
+\author{Michael Zhou}
+\date{}
+
+\newcounter{qcount}
+\newcommand\q{\stepcounter{qcount} \textbf{Question \theqcount}. }
+\newcommand\qedsymbol{\hfill$\blacksquare$}
+
+\begin{document}
+\maketitle
+
+\end{document}
+endsnippet
+
+snippet hf "Horizontal fill"
+\hfill 
+endsnippet
+
+snippet m "Math single"
+$${1:${VISUAL}}$$0
+endsnippet
+
+snippet mm "Math double"
+$$${1:${VISUAL}}$$$0
+endsnippet
+
+snippet mb "mathbb"
+\mathbb{${1:${VISUAL}}}$0
+endsnippet
+
+snippet { "close {" A
+{${1:${VISUAL}}}$0
+endsnippet
+
+snippet ( "close (" A
+(${1:${VISUAL}})$0
+endsnippet
+
+snippet ' "close quotation" A
+"${1:${VISUAL}}"$0
+endsnippet
+
+snippet df "Definition #" 
+\df 
+endsnippet
+
+snippet ex "Example #"
+\ex 
+endsnippet
+
+snippet tr "Theorem #"
+\tr 
+endsnippet
+
+snippet tra "Translation"
+\textit{Translation.} 
+endsnippet
+
+snippet dis "Discussion"
+\textit{Discussion.} 
+endsnippet
+
+snippet pr "Proof"
+\textit{Proof.} 
+endsnippet
+
+snippet align "Align*"
+\begin{align*}
+	${1:${VISUAL}}
+\end{align*}
+endsnippet
+
+snippet mod "Equiv" 
+(\text{ mod } ${1:${VISUAL}})
+endsnippet
+
+snippet tag "Right-aligned text"
+\tag*{${1:${VISUAL}}}
+endsnippet
+
+snippet qed "Black square end proof" 
+\qedsymbol
+endsnippet
