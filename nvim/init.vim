@@ -27,6 +27,10 @@ call plug#begin('~/.vim/plugged/')
     " Markdown
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+    " :MasonUpdate updates registry contents
+    Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+    Plug 'williamboman/mason-lspconfig.nvim'
+    
     Plug 'neovim/nvim-lspconfig'
     Plug 'neovim/nvim-lsp'
     Plug 'preservim/nerdcommenter'
@@ -43,32 +47,38 @@ call plug#begin('~/.vim/plugged/')
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
     Plug 'quangnguyen30192/cmp-nvim-ultisnips'
     Plug 'feline-nvim/feline.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'hrsh7th/cmp-omni'
-
+    
+    Plug 'jose-elias-alvarez/null-ls.nvim'
     Plug 'romgrk/barbar.nvim'
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'mfussenegger/nvim-dap-python'
+    Plug 'rcarriga/nvim-dap-ui'
+
 call plug#end()
 
 filetype plugin on
 
-
 source ~/.config/nvim/settings/_base.vim
-source ~/.config/nvim/settings/_remaps.vim
 source ~/.config/nvim/settings/_nerdtree.vim
 source ~/.config/nvim/settings/_remaps.vim
+source ~/.config/nvim/settings/_latex.vim
 
 " Use homebrew's clangd
 let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
 
-" LaTeX
-')
 luafile ~/.config/nvim/lua/_felinebar.lua
 luafile ~/.config/nvim/lua/_nvimcmp.lua
 luafile ~/.config/nvim/lua/_webdevicons.lua
 luafile ~/.config/nvim/lua/_gitsigns.lua
+luafile ~/.config/nvim/lua/_mason.lua
 luafile ~/.config/nvim/lua/_lspconfig.lua
 luafile ~/.config/nvim/lua/_felinebar.lua
-
+luafile ~/.config/nvim/lua/_null_ls.lua
+luafile ~/.config/nvim/lua/_nvim-dap.lua
+luafile ~/.config/nvim/lua/_treesitter.lua

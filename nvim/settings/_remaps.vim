@@ -1,3 +1,4 @@
+" Telescope
 nmap <leader>ff <cmd>Telescope find_files<cr>
 nmap <leader>fg <cmd>Telescope live_grep<cr>
 nmap <leader>fb <cmd>Telescope buffers<cr>
@@ -6,12 +7,22 @@ nmap <leader>gf <cmd>Telescope git_files<cr>
 nmap <leader>D <cmd>Telescope lsp_definitions<cr>
 nmap <leader>I <cmd>Telescope lsp_implementations<cr>
 nmap <leader>ts <cmd>Telescope treesitter<cr>
-nmap <leader>fs <cmd>Telescope planets<cr>
+nmap <leader>T <cmd>Telescope<cr>
 nmap <leader>km <cmd>Telescope keymaps<cr>
+
+" Nerd Tree
 nmap <Leader>n :NERDTreeToggle<CR>
-imap ij <Esc>:wa<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
+imap ij <Esc>:wa<CR>
+
+" LSP bindings -> See lspconfig.lua
+
+" Python debugging
+nmap <Leader>db <cmd>DapToggleBreakpoint<CR>
+nmap <Leader>dpr <cmd>lua require('dap-python').test_method()<CR>
+
+" Bracket completion
 inoremap "<tab> ""<left>
 inoremap '<tab> ''<left>
 inoremap (<tab> ()<left>

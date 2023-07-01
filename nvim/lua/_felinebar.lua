@@ -1,5 +1,3 @@
-vim.opt.termguicolors = true
-
 local line_ok, feline = pcall(require, "feline")
 if not line_ok then
 	return

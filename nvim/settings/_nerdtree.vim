@@ -8,4 +8,4 @@ else
     autocmd VimEnter * NERDTree
 endif
 let g:NERDTreeShowHidden=1
-
+let g:NERDTreeNodeDelimiter="\u00a0"

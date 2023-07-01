@@ -26,6 +26,8 @@ sources = cmp.config.sources({
 }, {
   { name = 'buffer' },
   { name = 'omni'},
+  { name = 'nvim_lsp_signature_help'},
+  { name = 'path'},
 })
 })
 
