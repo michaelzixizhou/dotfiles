@@ -12,7 +12,7 @@ nmap <leader>km <cmd>Telescope keymaps<cr>
 
 " Nerd Tree
 nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+nmap <Leader>r :NERDTreeFocus<cr>
 
 imap ij <Esc>:wa<CR>
 

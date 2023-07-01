@@ -78,7 +78,7 @@ luafile ~/.config/nvim/lua/_webdevicons.lua
 luafile ~/.config/nvim/lua/_gitsigns.lua
 luafile ~/.config/nvim/lua/_mason.lua
 luafile ~/.config/nvim/lua/_lspconfig.lua
-luafile ~/.config/nvim/lua/_felinebar.lua
 luafile ~/.config/nvim/lua/_null_ls.lua
+luafile ~/.config/nvim/lua/_telescope.lua
 luafile ~/.config/nvim/lua/_nvim-dap.lua
 luafile ~/.config/nvim/lua/_treesitter.lua
