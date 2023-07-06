@@ -1,11 +1,41 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+
+-- Individual server setups
 local lsp = require('lspconfig')
 lsp.clangd.setup {
-capabilities = capabilities
+    capabilities = capabilities
 }
 lsp.pyright.setup {
-capabilities = capabilities
+    capabilities = capabilities
+}
+--[[lsp.eslint.setup {]]
+    --[[capabilities = capabilities]]
+--[[}]]
+lsp.html.setup {
+    capabilities = capabilities
+}
+
+lsp.tsserver.setup {
+    capabilities = capabilities
+}
+
+lsp.cssls.setup {
+    capabilities = capabilities
+}
+
+-- Rounded borders 
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {border = 'rounded'}
+)
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {border = 'rounded'}
+)
+
+vim.diagnostic.config {     
+    float = { border = "rounded" }, 
 }
 
 -- Global mappings.
@@ -40,6 +70,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
-    end, opts)
+      vim.cmd('write')
+  end, opts)
   end,
 })

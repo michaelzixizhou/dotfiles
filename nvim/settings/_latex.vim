@@ -1,7 +1,6 @@
-let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
-let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+"let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
+"let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
+"let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer

@@ -7,5 +7,10 @@ else
     autocmd VimEnter * NERDTree
 endif
 
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
+
 let g:NERDTreeShowHidden=1
 let g:NERDTreeNodeDelimiter="\u00a0"

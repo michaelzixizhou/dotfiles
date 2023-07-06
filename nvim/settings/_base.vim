@@ -15,7 +15,7 @@ set smarttab
 set autoindent
 set hlsearch
 set wildmode=longest,list
-set cc=80
+set cc=88
 set clipboard=unnamedplus
 set expandtab
 set helplang=en

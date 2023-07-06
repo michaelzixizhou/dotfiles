@@ -42,6 +42,7 @@ call plug#begin('~/.vim/plugged/')
     Plug 'SirVer/ultisnips' 
     Plug 'honza/vim-snippets'
 
+    " Completion
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
@@ -59,7 +60,7 @@ call plug#begin('~/.vim/plugged/')
     Plug 'mfussenegger/nvim-dap'
     Plug 'mfussenegger/nvim-dap-python'
     Plug 'rcarriga/nvim-dap-ui'
-
+    Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 filetype plugin on
@@ -68,6 +69,8 @@ source ~/.config/nvim/settings/_base.vim
 source ~/.config/nvim/settings/_nerdtree.vim
 source ~/.config/nvim/settings/_remaps.vim
 source ~/.config/nvim/settings/_latex.vim
+source ~/.config/nvim/settings/_ultisnips.vim
+source ~/.config/nvim/settings/_startify.vim
 
 " Use homebrew's clangd
 let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
@@ -82,3 +85,4 @@ luafile ~/.config/nvim/lua/_null_ls.lua
 luafile ~/.config/nvim/lua/_telescope.lua
 luafile ~/.config/nvim/lua/_nvim-dap.lua
 luafile ~/.config/nvim/lua/_treesitter.lua
+luafile ~/.config/nvim/lua/_nvim-colorizer.lua
