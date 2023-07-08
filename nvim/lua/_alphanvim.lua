@@ -30,7 +30,7 @@ local fortune = require("alpha.fortune")
 
 
 local function footer()
-    local plugins_count = vim.fn.len(vim.fn.globpath("~/.vim/plugged", "*", 0, 1))
+    local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/plugged/", "*", 0, 1))
     local datetime = os.date("  %m-%d-%Y   %H:%M:%S")
     local version = vim.version()
     local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch

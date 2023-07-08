@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged/')
+call plug#begin()
     " Git status icons
     Plug 'airblade/vim-gitgutter'
     " Fuzzy finder
@@ -11,36 +11,37 @@ call plug#begin('~/.vim/plugged/')
     " Icons for different file types
     Plug 'ryanoasis/vim-devicons'
 
-    " Comment out lines
-    Plug 'tpope/vim-commentary'
-    
-    " NERDTree
-    " Plug 'scrooloose/nerdtree'
+    " Utility
     Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    Plug 'preservim/nerdcommenter'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'kylechui/nvim-surround'
+    Plug 'folke/which-key.nvim'
 
-    " Show error hints and highlights
-    Plug 'vim-syntastic/syntastic'
-
-    " Select multiple same items
-    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     " Git blamer
     Plug 'APZelos/blamer.nvim'
-
-    " Markdown
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
     " :MasonUpdate updates registry contents
     Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
     Plug 'williamboman/mason-lspconfig.nvim'
-    
+   
+    " LSP 
     Plug 'neovim/nvim-lspconfig'
     Plug 'neovim/nvim-lsp'
-    Plug 'preservim/nerdcommenter'
-    Plug 'mhinz/vim-startify'
+    Plug 'jose-elias-alvarez/null-ls.nvim'
+    " Python debugging
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'mfussenegger/nvim-dap-python'
+    Plug 'rcarriga/nvim-dap-ui'
+
+    " Alphanvim 
     Plug 'goolord/alpha-nvim'
     Plug 'michaelzixizhou/alpha-nvim-fortune'
 
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    " LaTeX
     Plug 'lervag/vimtex'
     Plug 'Shougo/deoplete.nvim'
     Plug 'SirVer/ultisnips' 
@@ -54,17 +55,13 @@ call plug#begin('~/.vim/plugged/')
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
     Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+    Plug 'hrsh7th/cmp-omni'
+
+    " Status bar and tabline
     Plug 'feline-nvim/feline.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'lewis6991/gitsigns.nvim'
-    Plug 'hrsh7th/cmp-omni'
-    
-    Plug 'jose-elias-alvarez/null-ls.nvim'
     Plug 'romgrk/barbar.nvim'
-    Plug 'mfussenegger/nvim-dap'
-    Plug 'mfussenegger/nvim-dap-python'
-    Plug 'rcarriga/nvim-dap-ui'
-    Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 filetype plugin on
@@ -73,7 +70,6 @@ source ~/.config/nvim/settings/_base.vim
 source ~/.config/nvim/settings/_remaps.vim
 source ~/.config/nvim/settings/_latex.vim
 source ~/.config/nvim/settings/_ultisnips.vim
-source ~/.config/nvim/settings/_startify.vim
 
 luafile ~/.config/nvim/lua/_felinebar.lua
 luafile ~/.config/nvim/lua/_nvimcmp.lua

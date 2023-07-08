@@ -43,3 +43,15 @@ let maplocalleader = ","
 " Git blamer
 let g:blamer_enabled = 1
 let g:blamer_delay = 200
+
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
+
+if argc() == 0
+    autocmd VimEnter * Alpha
+else
+    autocmd VimEnter * NvimTreeOpen
+endif
+
+
