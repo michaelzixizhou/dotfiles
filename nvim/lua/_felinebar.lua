@@ -227,6 +227,7 @@ local components = {
 }
 
 
+
 feline.setup({
 	components = components,
 	theme = one_monokai,

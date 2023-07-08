@@ -1,8 +1,9 @@
 " Theme
 syntax on
+set t_Co=256
 set termguicolors
-colorscheme gruvbox
 set background=dark
+colorscheme catppuccin
 set cursorline
 set hidden
 set list
@@ -31,7 +32,7 @@ set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 set splitbelow splitright
 set updatetime=300
-
+" set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 " Avoid showing message extra message when using completion
 set shortmess+=c
 

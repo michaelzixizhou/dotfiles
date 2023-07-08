@@ -28,3 +28,14 @@ let g:startify_custom_header = [
     \"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
     \"                                                     ",
     \]
+
+
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
+
+if argc() == 0
+    autocmd VimEnter * Startify
+else
+    autocmd VimEnter * NvimTreeOpen
+endif

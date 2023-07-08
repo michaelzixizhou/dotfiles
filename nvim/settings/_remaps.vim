@@ -8,11 +8,9 @@ nmap <leader>ts <cmd>Telescope treesitter<cr>
 nmap <leader>T <cmd>Telescope<cr>
 nmap <leader>km <cmd>Telescope keymaps<cr>
 
-" Nerd Tree
-nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>r :NERDTreeFocus<cr>
-
 imap ij <Esc>:wa<CR>
+
+nmap <leader>n <cmd>NvimTreeToggle<cr>
 
 " LSP bindings -> See lspconfig.lua
 

@@ -3,18 +3,20 @@ call plug#begin('~/.vim/plugged/')
     Plug 'airblade/vim-gitgutter'
     " Fuzzy finder
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+    Plug 'nvim-telescope/telescope.nvim'
     " Theme and coloring
     Plug 'morhetz/gruvbox'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
     " Icons for different file types
     Plug 'ryanoasis/vim-devicons'
 
     " Comment out lines
     Plug 'tpope/vim-commentary'
-
+    
     " NERDTree
-    Plug 'scrooloose/nerdtree'
+    " Plug 'scrooloose/nerdtree'
+    Plug 'nvim-tree/nvim-tree.lua'
 
     " Show error hints and highlights
     Plug 'vim-syntastic/syntastic'
@@ -35,6 +37,8 @@ call plug#begin('~/.vim/plugged/')
     Plug 'neovim/nvim-lsp'
     Plug 'preservim/nerdcommenter'
     Plug 'mhinz/vim-startify'
+    Plug 'goolord/alpha-nvim'
+    Plug 'michaelzixizhou/alpha-nvim-fortune'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'lervag/vimtex'
@@ -66,14 +70,10 @@ call plug#end()
 filetype plugin on
 
 source ~/.config/nvim/settings/_base.vim
-source ~/.config/nvim/settings/_nerdtree.vim
 source ~/.config/nvim/settings/_remaps.vim
 source ~/.config/nvim/settings/_latex.vim
 source ~/.config/nvim/settings/_ultisnips.vim
 source ~/.config/nvim/settings/_startify.vim
-
-" Use homebrew's clangd
-let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
 
 luafile ~/.config/nvim/lua/_felinebar.lua
 luafile ~/.config/nvim/lua/_nvimcmp.lua
@@ -86,3 +86,6 @@ luafile ~/.config/nvim/lua/_telescope.lua
 luafile ~/.config/nvim/lua/_nvim-dap.lua
 luafile ~/.config/nvim/lua/_treesitter.lua
 luafile ~/.config/nvim/lua/_nvim-colorizer.lua
+luafile ~/.config/nvim/lua/_catppuccin.lua
+luafile ~/.config/nvim/lua/_nvim-tree.lua
+luafile ~/.config/nvim/lua/_alphanvim.lua
