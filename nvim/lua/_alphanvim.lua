@@ -16,9 +16,9 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
     dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("f", "󰍉  > Find file", ":cd $HOME/Workspace | Telescope find_files<CR>"),
+    dashboard.button("f", "󰍉  > Find file", ":cd $HOME/Desktop/Workspace/| Telescope find_files<CR>"),
     dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-    dashboard.button("i", "  > init.vim", ":e $MYVIMRC | :cd ~/.config/nvim<CR>"),
+    dashboard.button("i", "  > init.vim", ":e $MYVIMRC | :cd ~/.config/nvim<CR> | :NvimTreeOpen<CR>"),
     dashboard.button("a", "  > alacritty.yml", ":cd ~/.config/alacritty | :e alacritty.yml<CR>"),
     dashboard.button("t", "  > tmux.conf", ":cd ~/ | :e .tmux.conf<CR>"),
     dashboard.button("z", "󰰶  > zshrc", ":cd ~/ | :e .zshrc<CR>"),

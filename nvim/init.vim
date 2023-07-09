@@ -4,6 +4,7 @@ call plug#begin()
     " Fuzzy finder
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+
     " Theme and coloring
     Plug 'morhetz/gruvbox'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
