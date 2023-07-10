@@ -51,7 +51,7 @@ endif
 if argc() == 0
     autocmd VimEnter * Alpha
 else
-    autocmd VimEnter * NvimTreeOpen
+    autocmd VimEnter * NvimTreeOpen * BarbarEnable
 endif
 
 

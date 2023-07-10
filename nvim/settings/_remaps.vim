@@ -10,7 +10,9 @@ nmap <leader>km <cmd>Telescope keymaps<cr>
 
 imap ij <Esc>:wa<CR>
 
+" Nvim Tree
 nmap <leader>n <cmd>NvimTreeToggle<cr>
+nmap <leader>r <cmd>NvimTreeFocus<cr>
 
 " LSP bindings -> See lspconfig.lua
 
@@ -30,3 +32,18 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 " Reset init.vim
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+
+function! CleanBufs()
+    let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 && (getbufline(v:val, 1, "$") == [""])')
+    if !empty(buffers)
+        exe 'bd '.join(buffers, ' ')
+    else
+        echo 'No buffer deleted'
+    endif
+endfunction
+
+nnoremap <silent> ,C :call CleanBufs()<CR>
+
+
+nmap <leader>? <cmd>WhichKey<cr>
