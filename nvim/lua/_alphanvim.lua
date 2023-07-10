@@ -18,11 +18,11 @@ dashboard.section.buttons.val = {
     dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("f", "󰍉  > Find file", ":cd $HOME/Desktop/Workspace/| Telescope find_files<CR>"),
     dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-    dashboard.button("i", "  > init.vim", ":e $MYVIMRC | :cd ~/.config/nvim<CR> | :NvimTreeOpen<CR>"),
-    dashboard.button("a", "  > alacritty.yml", ":cd ~/.config/alacritty | :e alacritty.yml<CR>"),
-    dashboard.button("t", "  > tmux.conf", ":cd ~/ | :e .tmux.conf<CR>"),
-    dashboard.button("z", "󰰶  > zshrc", ":cd ~/ | :e .zshrc<CR>"),
-    dashboard.button("s", "  > Snippets", ":cd ~/.config/nvim/mysnippets<CR>"),
+    dashboard.button("i", "  > init.vim", ":e $MYVIMRC | :cd ~/.config/nvim<CR> | :NvimTreeOpen<CR>| :call CleanBufs()<CR>"),
+    dashboard.button("a", "  > alacritty.yml", ":cd ~/.config/alacritty | :e alacritty.yml<CR> | :call CleanBufs()<CR> "),
+    dashboard.button("t", "  > tmux.conf", ":cd ~/ | :e .tmux.conf<CR> | :call CleanBufs()<CR>"),
+    dashboard.button("z", "󰰶  > zshrc", ":cd ~/ | :e .zshrc<CR> | :call CleanBufs()<CR>"),
+    dashboard.button("s", "  > Snippets", ":cd ~/.config/nvim/mysnippets<CR> | :e tex.snippets<CR> | :NvimTreeOpen<CR>| :call CleanBufs()<CR>"),
     dashboard.button("q", "󰠜  > Quit NVIM", ":qa<CR>"),
 }
 

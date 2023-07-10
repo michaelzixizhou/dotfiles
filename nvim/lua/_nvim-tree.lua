@@ -14,7 +14,6 @@ local function my_on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    vim.keymap.set('n', '<leader>r', ':NvimTreeFocus', opts('Up'))
 end
 
 -- OR setup with some options
@@ -28,6 +27,9 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = false,
+        exclude = {
+            ".DS_Store",
+        }
     },
     on_attach = my_on_attach,
 })
