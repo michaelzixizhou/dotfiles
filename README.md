@@ -3,3 +3,8 @@
 
 Or in other words, I needed to pimp up my neofetch.</p>
 
+## TO DO 
+- [ ] Migrate to Lazy Plugins
+- [ ] Switch to tabby.nvim
+- [ ] Configure Venv support
+- [ ] Git branch for Kitty Statusline
