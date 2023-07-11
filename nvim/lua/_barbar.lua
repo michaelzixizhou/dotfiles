@@ -2,7 +2,7 @@ vim.g.barbar_auto_setup = false -- disable auto-setup
 
 require 'barbar'.setup {
     -- Enable/disable auto-hiding the tab bar when there is a single buffer
-
+    animation = false,
     -- Enables/disable clickable tabs
     --  - left-click: go to buffer
     --  - middle-click: delete buffer

@@ -86,3 +86,4 @@ luafile ~/.config/nvim/lua/_nvim-colorizer.lua
 luafile ~/.config/nvim/lua/_catppuccin.lua
 luafile ~/.config/nvim/lua/_nvim-tree.lua
 luafile ~/.config/nvim/lua/_alphanvim.lua
+luafile ~/.config/nvim/lua/_barbar.lua

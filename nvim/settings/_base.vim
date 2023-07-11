@@ -54,4 +54,5 @@ else
     autocmd VimEnter * NvimTreeOpen * BarbarEnable
 endif
 
-
+let g:python3_host_prog = '/usr/local/bin/python'
+let g:python_host_prog = '/usr/local/bin/python'

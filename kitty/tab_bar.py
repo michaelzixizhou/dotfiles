@@ -5,7 +5,8 @@
 import datetime
 
 from kitty.fast_data_types import Screen, get_options
-from kitty.tab_bar import (DrawData, ExtraData, TabBarData, as_rgb, draw_title)
+from kitty.tab_bar import (DrawData, ExtraData, TabBarData, as_rgb, draw_title, \
+        TabAccessor)
 from kitty.utils import color_as_int
 
 opts = get_options()
@@ -122,8 +123,12 @@ def _draw_left_status(
         screen.draw(' ')
     return end
 
+def _get_git_branch(tab: TabBarData) -> str:
+    ta = TabAccessor(tab.tab_id)
+    wd = ta.active_wd()
 
-def _draw_right_status(draw_data, screen: Screen, is_last: bool) -> int:
+
+def _draw_right_status(draw_data: DrawData, screen: Screen, is_last: bool, tab) -> int:
     if not is_last:
         return screen.cursor.x
 
@@ -186,5 +191,6 @@ def draw_tab(
         draw_data,
         screen,
         is_last,
+        tab
     )
     return end
