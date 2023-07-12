@@ -4,3 +4,6 @@ linearmouse/
 wireshark/
 /.DS_Store
 
+*.bak
+
+lazy-lock.json

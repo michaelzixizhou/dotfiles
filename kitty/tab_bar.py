@@ -128,6 +128,7 @@ def _draw_left_status(
     # wd = ta.active_wd()
 
 
+
 def _draw_right_status(draw_data: DrawData, screen: Screen, is_last: bool, tab) -> int:
     if not is_last:
         return screen.cursor.x
