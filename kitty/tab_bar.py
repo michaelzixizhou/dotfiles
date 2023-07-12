@@ -123,9 +123,9 @@ def _draw_left_status(
         screen.draw(' ')
     return end
 
-def _get_git_branch(tab: TabBarData) -> str:
-    ta = TabAccessor(tab.tab_id)
-    wd = ta.active_wd()
+##def _get_git_branch(tab: TabBarData) -> str:
+#    ta = TabAccessor(tab.tab_id)
+#    wd = ta.active_wd()
 
 
 def _draw_right_status(draw_data: DrawData, screen: Screen, is_last: bool, tab) -> int:
