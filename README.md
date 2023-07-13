@@ -14,8 +14,11 @@ Or in other words, I needed to pimp up my neofetch.</p>
 - Directory tree using nvim-tree
 - Telescope fuzzy finder
 
+## Bugs
+- LSP signature help overlaps with cmp signature help
+
 ## TO DO 
 - [X] Migrate to Lazy Plugins
-- [ ] Switch to tabby.nvim
 - [ ] Configure Venv support
 - [X] Git branch for Kitty Statusline
+- [ ] Rewrite LSP and CMP
