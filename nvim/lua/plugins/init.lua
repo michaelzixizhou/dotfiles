@@ -25,6 +25,18 @@ return {
         config = function()
             require("nvim-surround").setup({
                 -- Configuration here, or leave empty to use defaults
+                keymaps = {
+                    insert = "<C-g>s",
+                    insert_line = "<C-g>S",
+                    normal = "<leader>s",
+                    normal_cur = "<leader>ss",
+                    normal_line = "<leader>S",
+                    normal_cur_line = "<leader>SS",
+                    visual = "S",
+                    visual_line = "gS",
+                    delete = "<leader>ds",
+                    change = "<leader>cs",
+                },
             })
         end
     },
@@ -33,104 +45,6 @@ return {
         config = true
     },
     -- Better `vim.notify()`
-    {
-        "rcarriga/nvim-notify",
-        keys = {
-            {
-                "<leader>un",
-                function()
-                    require("notify").dismiss({ silent = true, pending = true })
-                end,
-                desc = "Dismiss all Notifications",
-            },
-        },
-        opts = {
-            timeout = 3000,
-            max_height = function()
-                return math.floor(vim.o.lines * 0.75)
-            end,
-            max_width = function()
-                return math.floor(vim.o.columns * 0.75)
-            end,
-        },
-        init = function()
-            vim.notify = require("notify")
-        end,
-    },
-    {
-        'stevearc/dressing.nvim',
-        opts = {},
-    },
-    {
-        'rcarriga/nvim-notify',
-        opts = {
-            render = "compact",
-            stages = "fade",
-            minimum_width = 30,
-        }
-    },
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        },
-        opts = {
-            lsp = {
-                override = {
-                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                    ["vim.lsp.util.stylize_markdown"] = true,
-                    ["cmp.entry.get_documentation"] = true,
-                },
-            },
-            presets = {
-                bottom_search = true,
-                command_palette = true,
-                long_message_to_split = true,
-            },
-            routes = {
-                {
-                    view = "notify",
-                    filter = { event = "msg_showmode" },
-                },
-            },
-            cmdline_popup = {
-                position = {
-                    row = 5,
-                    col = "50%",
-                },
-                size = {
-                    width = 60,
-                    height = "auto",
-                },
-            },
-            popupmenu = {
-                enabled = true,  -- enables the Noice popupmenu UI
-                backend = "cmp", -- backend to use to show regular cmdline completions
-                relative = "editor",
-                position = {
-                    row = 10,
-                    col = "50%",
-                },
-                size = {
-                    width = 80,
-                    height = 10,
-                },
-                border = {
-                    style = "rounded",
-                    padding = { 0, 1 },
-                },
-                win_options = {
-                    winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-                },
-            },
-        },
-    },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -142,14 +56,12 @@ return {
     },
     {
         "lervag/vimtex",
-        dependencies = {
-            'Shougo/deoplete.nvim',
-            'SirVer/ultisnips',
-            'honza/vim-snippets'
-        },
         config = function()
             vim.cmd.source('~/.config/nvim/_latex.vim')
-        end
+        end,
+        dependencies = {
+            'honza/vim-snippets'
+        }
     },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -173,10 +85,34 @@ return {
     },
     {
         "RRethy/vim-illuminate",
+        config = function()
+            -- default configuration
+            require('illuminate').configure({
+                -- providers: provider used to get references in the buffer, ordered by priority
+                providers = {
+                    'lsp',
+                    'treesitter',
+                    'regex',
+                },
+                -- delay: delay in milliseconds
+                delay = 0,
+                filetype_overrides = {},
+                -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
+                filetypes_denylist = {
+                    'NvimTree',
+                    'Telescope',
+                    'Lazy'
+                },
+                under_cursor = true,
+                large_file_cutoff = nil,
+                large_file_overrides = nil,
+                min_count_to_highlight = 1,
+            })
+        end
     },
     {
         "echasnovski/mini.indentscope",
-        version = false,     -- wait till new 0.7.0 release to put it back on semver
+        version = false, -- wait till new 0.7.0 release to put it back on semver
         event = { "BufReadPre", "BufNewFile" },
         opts = {
             -- symbol = "▏",

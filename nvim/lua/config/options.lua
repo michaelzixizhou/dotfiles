@@ -36,6 +36,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.updatetime = 200
 opt.shortmess:append({ c = true })
+opt.showmode = false
 
 vim.o.timeout = true
 vim.o.timeoutlen = 300

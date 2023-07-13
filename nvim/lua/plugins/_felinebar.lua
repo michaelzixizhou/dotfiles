@@ -9,17 +9,17 @@ function M.config()
     end
 
     local one_monokai = {
-        fg = "#abb2bf",
-        bg = "#1e2024",
-        green = "#98c379",
-        yellow = "#e5c07b",
-        purple = "#c678dd",
-        orange = "#d19a66",
-        peanut = "#f6d5a4",
-        red = "#e06c75",
-        aqua = "#61afef",
-        darkblue = "#282c34",
-        dark_red = "#f75f5f",
+        fg = "#CDD6F4",
+        bg = "#1E1E2E",
+        green = "#A6E3A1",
+        yellow = "#F9E2AF",
+        purple = "#F5C2E7",
+        orange = "#fab387",
+        peanut = "#f5e0dc",
+        red = "#f38ba8",
+        aqua = "#89b4fa",
+        darkblue = "#1E1E2E",
+        dark_red = "#cba6f7",
     }
 
     local vi_mode_colors = {
@@ -232,11 +232,20 @@ function M.config()
     }
 
 
+    components.inactive = {
+    }
+
+
 
     feline.setup({
         components = components,
         theme = one_monokai,
         vi_mode_colors = vi_mode_colors,
+        force_inactive = {
+            filetypes = {
+                "NvimTree",
+            }
+        }
     })
 end
 

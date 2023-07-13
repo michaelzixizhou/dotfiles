@@ -1,11 +1,9 @@
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "/Users/michael/.config/nvim/mysnippets"]
-
-
 let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer
         \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
-
+let g:UltiSnipsExpandTrigger = '<Nop>'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 " This adds a callback hook that updates Skim after compilation
 let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
 function! UpdateSkim(status)
@@ -25,8 +23,3 @@ function! UpdateSkim(status)
     call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
     endif
 endfunction
-
-" This is new style
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
