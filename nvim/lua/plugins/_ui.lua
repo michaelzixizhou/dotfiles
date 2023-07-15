@@ -56,6 +56,9 @@ return {
                 },
                 signature = {
                     enabled = false
+                },
+                hover = {
+                    enabled = false
                 }
             },
             presets = {

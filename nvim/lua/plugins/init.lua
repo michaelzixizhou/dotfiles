@@ -94,13 +94,16 @@ return {
                     'regex',
                 },
                 -- delay: delay in milliseconds
-                delay = 0,
+                delay = 10,
                 filetype_overrides = {},
                 -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
                 filetypes_denylist = {
                     'NvimTree',
                     'Telescope',
-                    'Lazy'
+                    'lazy',
+                    'help',
+                    'alpha',
+                    'Trouble'
                 },
                 under_cursor = true,
                 large_file_cutoff = nil,

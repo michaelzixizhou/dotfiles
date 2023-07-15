@@ -12,7 +12,7 @@ return {
             "quangnguyen30192/cmp-nvim-ultisnips",
             "hrsh7th/cmp-omni",
             'SirVer/ultisnips',
-
+            "ray-x/cmp-treesitter"
         },
         config = function()
             require("cmp_nvim_ultisnips").setup{}
@@ -41,11 +41,11 @@ return {
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
                     { name = 'ultisnips' }, -- For ultisnips users.
-                }, {
                     { name = 'buffer' },
                     { name = 'omni' },
                     { name = 'nvim_lsp_signature_help' },
                     { name = 'path' },
+                    { name = 'treesitter' }
                 })
             })
 

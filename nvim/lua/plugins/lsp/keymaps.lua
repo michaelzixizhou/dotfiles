@@ -37,7 +37,6 @@ function M.get()
             end, opts)
         end,
     })
-
 end
 
 return M

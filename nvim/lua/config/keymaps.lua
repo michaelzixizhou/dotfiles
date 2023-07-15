@@ -33,6 +33,7 @@ map('n', '<leader>dpr', function() require('dap-python').test_method() end)
 
 -- Bracket completion
 
+map('i', "'<tab>", "''<left>")
 map('i', '"<tab>', '""<left>')
 map('i', ";<tab>", "''<left>")
 map('i', '(<tab>', '()<left>')
