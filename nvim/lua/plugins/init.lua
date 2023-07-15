@@ -8,7 +8,6 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        config = true,
     },
     {
         "lewis6991/gitsigns.nvim",

@@ -39,7 +39,9 @@ function M.config()
             dotfiles = false,
             custom = {
                 "DS_Store",
-                "node_modules"
+                "node_modules",
+                ".mypy_cache",
+                "__pycache__"
             }
         },
         on_attach = my_on_attach,

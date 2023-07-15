@@ -7,6 +7,7 @@ return {
             "mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             {
+                "hrsh7th/nvim-cmp",
                 "hrsh7th/cmp-nvim-lsp",
             },
             { "folke/trouble.nvim", config = true },
@@ -19,6 +20,14 @@ return {
                 update_in_insert = false,
                 virtual_text = { spacing = 4, prefix = "●" },
                 severity_sort = true,
+                float = {
+                    focusable = true,
+                    style = "minimal",
+                    border = "rounded",
+                    source = "always",
+                    header = "",
+                    prefix = "",
+                },
             },
             -- Automatically format on save
             autoformat = true,
@@ -74,6 +83,7 @@ return {
             local servers = opts.servers
             local capabilities =
                 require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            capabilities.textDocument.completion.completionItem.snippetSupport = true
 
             local function setup(server)
                 local server_opts = vim.tbl_deep_extend("force", {
@@ -132,6 +142,20 @@ return {
                     })
                 end,
             })
+            -- Rounded borders
+            vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+                vim.lsp.handlers.hover,
+                { border = 'rounded' }
+            )
+
+            -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+            --     vim.lsp.handlers.signature_help,
+            --     { border = 'rounded' }
+            -- )
+            --
+            vim.diagnostic.config {
+                float = { border = "rounded" },
+            }
         end,
     },
 
