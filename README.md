@@ -14,8 +14,11 @@ Or in other words, I needed to pimp up my neofetch.</p>
 - Directory tree using nvim-tree
 - Telescope fuzzy finder
 
-## Bugs
-- LSP signature help overlaps with cmp signature help
+## Screenshots
+<img width="1840" alt="image" src="https://github.com/michaelzixizhou/dotfiles/assets/106829824/bfedcf67-a8c7-48e5-a913-501340a05a22">
+<img width="1840" alt="image" src="https://github.com/michaelzixizhou/dotfiles/assets/106829824/05332a38-d7f3-4368-8f9b-cf222614a3f3">
+<img width="1840" alt="image" src="https://github.com/michaelzixizhou/dotfiles/assets/106829824/95702570-77d7-4978-815e-34c94244e8ab">
+
 
 ## TO DO 
 - [X] Migrate to Lazy Plugins
