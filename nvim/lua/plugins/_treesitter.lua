@@ -14,55 +14,54 @@ function M.config()
     require 'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the five listed parsers should always be installed)
         highlight = {
-			enable = true,
-			disable = function(ft, bufnr)
-				if vim.tbl_contains({ "vim" }, ft) then
-					return true
-				end
-
-				local ok, is_large_file = pcall(vim.api.nvim_buf_get_var, bufnr, "bigfile_disable_treesitter")
-				return ok and is_large_file
-			end,
-			additional_vim_regex_highlighting = { "c", "cpp" },
-		},
-		textobjects = {
-			select = {
-				enable = true,
-				keymaps = {
-					["af"] = "@function.outer",
-					["if"] = "@function.inner",
-					["ac"] = "@class.outer",
-					["ic"] = "@class.inner",
-				},
-			},
-			move = {
-				enable = true,
-				set_jumps = true, -- whether to set jumps in the jumplist
-				goto_next_start = {
-					["]["] = "@function.outer",
-					["]m"] = "@class.outer",
-				},
-				goto_next_end = {
-					["]]"] = "@function.outer",
-					["]M"] = "@class.outer",
-				},
-				goto_previous_start = {
-					["[["] = "@function.outer",
-					["[m"] = "@class.outer",
-				},
-				goto_previous_end = {
-					["[]"] = "@function.outer",
-					["[M"] = "@class.outer",
-				},
-			},
-		},
-		rainbow = {
-			enable = true,
-			extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-			max_file_lines = 2000, -- Do not enable for files with more than 2000 lines, int
-		},
-		context_commentstring = { enable = true, enable_autocmd = false },
-		matchup = { enable = true },
+            enable = true,
+            disable = function(lang, buf)
+                local max_filesize = 100 * 1024 -- 100 KB
+                local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                if ok and stats and stats.size > max_filesize then
+                    return true
+                end
+            end,
+            additional_vim_regex_highlighting = false,
+        },
+        textobjects = {
+            select = {
+                enable = true,
+                keymaps = {
+                    ["af"] = "@function.outer",
+                    ["if"] = "@function.inner",
+                    ["ac"] = "@class.outer",
+                    ["ic"] = "@class.inner",
+                },
+            },
+            move = {
+                enable = true,
+                set_jumps = true, -- whether to set jumps in the jumplist
+                goto_next_start = {
+                    ["]["] = "@function.outer",
+                    ["]m"] = "@class.outer",
+                },
+                goto_next_end = {
+                    ["]]"] = "@function.outer",
+                    ["]M"] = "@class.outer",
+                },
+                goto_previous_start = {
+                    ["[["] = "@function.outer",
+                    ["[m"] = "@class.outer",
+                },
+                goto_previous_end = {
+                    ["[]"] = "@function.outer",
+                    ["[M"] = "@class.outer",
+                },
+            },
+        },
+        rainbow = {
+            enable = true,
+            extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+            max_file_lines = 2000, -- Do not enable for files with more than 2000 lines, int
+        },
+        context_commentstring = { enable = true, enable_autocmd = false },
+        matchup = { enable = true },
         -- ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python" },
         --
         -- highlight = {
