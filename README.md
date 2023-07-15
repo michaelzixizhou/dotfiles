@@ -25,3 +25,4 @@ Or in other words, I needed to pimp up my neofetch.</p>
 - [ ] Configure Venv support
 - [X] Git branch for Kitty Statusline
 - [ ] Rewrite LSP and CMP
+- [ ] Disable treesitter on specific folders (e.g. node_modules)
