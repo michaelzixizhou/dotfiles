@@ -15,6 +15,8 @@ return {
             "ray-x/cmp-treesitter"
         },
         config = function()
+            vim.g.UltiSnipsExpandTrigger = '<Nop>'
+
             require("cmp_nvim_ultisnips").setup {}
             local cmp = require('cmp')
             cmp.setup({
