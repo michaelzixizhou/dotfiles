@@ -9,14 +9,13 @@ return {
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-nvim-lsp-signature-help",
+            'SirVer/ultisnips',
             "quangnguyen30192/cmp-nvim-ultisnips",
             "hrsh7th/cmp-omni",
-            'SirVer/ultisnips',
             "ray-x/cmp-treesitter"
         },
         config = function()
-            require("cmp_nvim_ultisnips").setup{}
-
+            require("cmp_nvim_ultisnips").setup {}
             local cmp = require('cmp')
             cmp.setup({
                 snippet = {
@@ -30,23 +29,41 @@ return {
                     documentation = cmp.config.window.bordered(),
                 },
 
-                mapping = cmp.mapping.preset.insert({
-                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-                }),
+                mapping = cmp.mapping.preset.insert {
+                    ["<tab>"] = cmp.mapping.confirm { select = true },
+                    ["<c-e>"] = cmp.mapping.abort(),
+                    ["<esc>"] = cmp.mapping.close(),
+                    ["<c-d>"] = cmp.mapping.scroll_docs(-4),
+                    ["<c-f>"] = cmp.mapping.scroll_docs(4),
+                },
 
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'ultisnips' }, -- For ultisnips users.
+                    { name = 'nvim_lsp', priority = 10 },
+                    { name = 'ultisnips', priority = 15 }, -- For ultisnips users.
                     { name = 'buffer' },
                     { name = 'omni' },
                     { name = 'nvim_lsp_signature_help' },
-                    { name = 'path' },
-                    { name = 'treesitter' }
-                })
+                    { name = 'path', priority = 20 },
+                    { name = 'treesitter', priority = 5 }
+                }),
+                formatting = {
+                    fields = { "kind", "abbr", "menu" },
+                    format = function(entry, vim_item)
+                        vim_item.menu = ({
+                            nvim_lsp = "[LSP]",
+                            ultisnips = "[Snippet]",
+                            buffer = "[Buffer]",
+                            path = "[Path]",
+                            omni = "[Omni]",
+                            nvim_lsp_signature_help = "[LSP]",
+                            treesitter = "[Treesitter]"
+                        })[entry.source.name]
+                        return vim_item
+                    end,
+                },
+                completion = {
+                    keyword_length = 1,
+                },
             })
 
             -- Set configuration for specific filetype.
