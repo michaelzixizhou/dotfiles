@@ -40,13 +40,15 @@ return {
                 },
 
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp', priority = 10 },
-                    { name = 'ultisnips', priority = 15 }, -- For ultisnips users.
+                    { name = 'nvim_lsp',               priority = 10 },
+                    { name = 'ultisnips',              priority = 15 }, -- For ultisnips users.
                     { name = 'buffer' },
-                    { name = 'omni' },
+                    { name = 'omni',                   priority = 25 },
                     { name = 'nvim_lsp_signature_help' },
-                    { name = 'path', priority = 20 },
-                    { name = 'treesitter', priority = 5 }
+                    { name = 'path',                   priority = 20 },
+                    { name = 'treesitter',             priority = 5 },
+                    { name = '' },
+                    { name = "copilot",                priority = 23 },
                 }),
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
@@ -58,7 +60,8 @@ return {
                             path = "[Path]",
                             omni = "[Omni]",
                             nvim_lsp_signature_help = "[LSP]",
-                            treesitter = "[Treesitter]"
+                            treesitter = "[Treesitter]",
+                            copilot = "[Copilot]",
                         })[entry.source.name]
                         return vim_item
                     end,

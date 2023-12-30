@@ -12,8 +12,9 @@ function M.config()
             null_ls.builtins.diagnostics.ruff,
             null_ls.builtins.diagnostics.mypy,
             null_ls.builtins.formatting.black,
-            null_ls.builtins.formatting.clang_format,
+            -- null_ls.builtins.formatting.clang_format,
         },
+        offset_encoding = "utf-8",
     })
 end
 

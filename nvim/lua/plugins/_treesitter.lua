@@ -16,8 +16,23 @@ function M.config()
         highlight = {
             enable = true,
             disable = function(lang, buf)
+                local filetypes = { "latex" }
+                local function contains(table, element)
+                    for _, value in ipairs(table) do
+                        if value == element then
+                            return true
+                        end
+                    end
+                    return false
+                end
+
+                if contains(filetypes, lang) then
+                    return true
+                end
+
                 local max_filesize = 100 * 1024 -- 100 KB
                 local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+
                 if ok and stats and stats.size > max_filesize then
                     return true
                 end
@@ -57,12 +72,12 @@ function M.config()
         },
         rainbow = {
             enable = true,
-            extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+            extended_mode = true,  -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
             max_file_lines = 2000, -- Do not enable for files with more than 2000 lines, int
         },
         context_commentstring = { enable = true, enable_autocmd = false },
         matchup = { enable = true },
-      }
+    }
 end
 
 return M

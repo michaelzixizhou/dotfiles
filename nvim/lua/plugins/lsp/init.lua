@@ -65,10 +65,8 @@ return {
                 --   return true
                 -- end,
                 -- Specify * to use this function as a fallback for any server
-                -- ["*"] = function(server, opts) end,
-            },
+            }
         },
-        ---@param opts PluginLspOpts
         config = function(_, opts)
             -- setup autoformat
             -- setup formatting and keymaps
@@ -141,6 +139,14 @@ return {
                         },
                     })
                 end,
+                --
+                -- ['clangd'] = function()
+                --     require("lspconfig").clangd.setup({
+                --         settings = {
+                --
+                --         }
+                --     })
+                -- end
             })
             -- Rounded borders
             vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(

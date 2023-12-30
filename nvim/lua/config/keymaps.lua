@@ -42,7 +42,6 @@ map('i', '{<tab>', '{}<left>')
 map('i', '[<CR>', '[<CR>]<ESC>O')
 map('i', '{<CR>', '{<CR>}<ESC>O')
 
-
 -- Clean up buffers
 map('n', '<Leader>C',
     function()
