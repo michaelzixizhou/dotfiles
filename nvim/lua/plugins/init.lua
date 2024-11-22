@@ -63,24 +63,38 @@ return {
         }
     },
     {
-        "lukas-reineke/indent-blankline.nvim",
-        event = { "BufReadPost", "BufNewFile" },
-        opts = {
-            -- char = "▏",
-            char = "│",
-            filetype_exclude = {
-                "help",
-                "alpha",
-                "dashboard",
-                "NvimTree",
-                "Trouble",
-                "lazy",
-                "mason",
-                "notify",
-            },
-            show_trailing_blankline_indent = false,
-            show_current_context = false,
-        },
+        -- "lukas-reineke/indent-blankline.nvim",
+        -- event = { "BufReadPost", "BufNewFile" },
+        -- main = "ibl",
+        -- opts = {
+        --     -- char = "▏",
+        --     -- char = "│",
+        --     -- filetype_exclude = {
+        --     --     "help",
+        --     --     "alpha",
+        --     --     "dashboard",
+        --     --     "NvimTree",
+        --     --     "Trouble",
+        --     --     "lazy",
+        --     --     "mason",
+        --     --     "notify",
+        --     -- },
+        --     -- show_trailing_blankline_indent = false,
+        --     -- show_current_context = false,
+        --     config = {
+        --         exclude = {
+        --             "help",
+        --             "alpha",
+        --             "dashboard",
+        --             "NvimTree",
+        --             "Trouble",
+        --             "lazy",
+        --             "mason",
+        --             "notify",
+        --
+        --         }
+        --     }
+        -- },
     },
     {
         "RRethy/vim-illuminate",
@@ -140,18 +154,28 @@ return {
         end,
     },
     {
-        "github/copilot.vim",
-        config = function()
-            require("copilot").setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
-        end
-    },
-    {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-            require("copilot_cmp").setup()
-        end
-    },
+        "rust-lang/rust.vim"
+    }
+    -- {
+    --     "github/copilot.vim",
+    --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = { enabled = false },
+    --             panel = { enabled = false },
+    --         })
+    --     end
+    -- },
+    -- {
+    --     "zbirenbaum/copilot-cmp",
+    --     dependencies = {
+    --         "github/copilot.vim",
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    --     config = function()
+    --         require("copilot_cmp").setup()
+    --     end
+    -- },
+    ,
+    { "nvim-neotest/nvim-nio" },
+
 }

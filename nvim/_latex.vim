@@ -2,12 +2,10 @@ let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer
         \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 
-nmap <Tab> <Nop>
-xmap <Tab> <Nop>
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:UltiSnipsExpandTrigger="<C-i>"
-let g:UltiSnipsJumpForwardTrigger="<C-f>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 " This adds a callback hook that updates Skim after compilation

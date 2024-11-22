@@ -44,14 +44,18 @@ return {
                 types = {},
                 operators = {},
             },
-            color_overrides = {},
+            color_overrides = {
+                mocha = {
+                    
+                }
+            },
             custom_highlights = {},
             integrations = {
                 cmp = true,
                 gitsigns = true,
                 nvimtree = true,
                 telescope = true,
-                notify = false,
+                notify = true,
                 mini = false,
                 barbar = true,
                 treesitter = true,

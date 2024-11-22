@@ -154,3 +154,30 @@ snippet sqrt "Square root"
 \sqrt{${1:${VISUAL}}}
 endsnippet
 	
+
+snippet code "Code block support"
+\usepackage{listings} 
+\lstnewenvironment{numberedverbatim}[1][]
+{
+    \lstset{
+        basicstyle=\ttfamily,
+        numbers=left,
+        numberstyle=\scriptsize,
+        stepnumber=1,
+        numbersep=5pt,
+        tabsize=4,
+        extendedchars=true,
+        breaklines=true,
+        showspaces=false,
+        showtabs=false,
+        showstringspaces=false,
+        frame=single,
+        xleftmargin=\parindent,
+        #1
+    }
+}
+{}
+endsnippet
+
+
+

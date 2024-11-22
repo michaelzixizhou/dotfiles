@@ -54,6 +54,18 @@ return {
                         },
                     },
                 },
+                clangd = {
+                    cmd = {
+                        "clangd",
+                        "--background-index",
+                        "--clang-tidy",
+                        "--header-insertion=iwyu",
+                        "--completion-style=detailed",
+                        "--function-arg-placeholders",
+                        "--fallback-style=llvm",
+                        "--header-insertion=never",
+                    },
+                },
             },
             -- you can do any additional lsp server setup here
             -- return true if you don't want this server to be setup with lspconfig
@@ -139,6 +151,8 @@ return {
                         },
                     })
                 end,
+
+
                 --
                 -- ['clangd'] = function()
                 --     require("lspconfig").clangd.setup({
@@ -146,6 +160,7 @@ return {
                 --
                 --         }
                 --     })
+                --     
                 -- end
             })
             -- Rounded borders
@@ -164,5 +179,4 @@ return {
             }
         end,
     },
-
 }
