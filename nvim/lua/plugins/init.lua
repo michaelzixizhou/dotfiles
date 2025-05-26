@@ -35,6 +35,7 @@ return {
                     visual_line = "gS",
                     delete = "<leader>ds",
                     change = "<leader>cs",
+
                 },
             })
         end
@@ -43,7 +44,6 @@ return {
         "folke/which-key.nvim",
         event = "VeryLazy",
     },
-    -- Better `vim.notify()`
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -177,5 +177,28 @@ return {
     -- },
     ,
     { "nvim-neotest/nvim-nio" },
-
+    -- install with yarn or npm
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "npm install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
+    {
+        "ray-x/go.nvim",
+        dependencies = { -- optional packages
+            "ray-x/guihua.lua",
+            "neovim/nvim-lspconfig",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("go").setup()
+        end,
+        event = { "CmdlineEnter" },
+        ft = { "go", 'gomod' },
+        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    }
 }

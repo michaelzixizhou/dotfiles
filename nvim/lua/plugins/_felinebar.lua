@@ -1,5 +1,5 @@
 local M = {
-    'freddiehaddad/feline.nvim'
+    'famiu/feline.nvim'
 }
 
 function M.config()

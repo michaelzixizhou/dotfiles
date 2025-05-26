@@ -42,6 +42,6 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 
-
-vim.g.python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
-vim.g.python_host_prog = '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
+--
+-- vim.g.python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
+-- vim.g.python_host_prog = '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
